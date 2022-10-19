@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+  namespace: sonar
+  name: sonar
+spec:
+  tls:
+  - hosts:
+    - <<Update Your FQDN>>
+    secretName: sonar-app-tls
+  rules:
+  - host: <<Update Your FQDN>>
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service: 
+            name: sonar
+            port: 
+              number: 9000
