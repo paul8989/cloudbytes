@@ -1,0 +1,7 @@
+# sonar namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sonar
+  labels:
+    app.kubernetes.io/instance: sonarqube
